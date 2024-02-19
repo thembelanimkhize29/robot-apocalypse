@@ -1,7 +1,7 @@
 # robot-apocalypse
 The future of humankind 
 
-To run This Project You will need to have Postgres installed in your machine.
+To run This Project You will need to have Postgres installed on your machine.
 create a database and name it robot
 
 have IntelliJ installed
@@ -20,32 +20,13 @@ spring.datasource.password=12345678        {your password}
 having this conf in your application properties
 spring.jpa.hibernate.ddl-auto=update  tables will be created automatically, considering you have robot database created
 
-ensure zscaler is turned of
+Ensure Zscaler is turned off.
 
 
-after running the project these are endpoints you will run
+after running the project these are the endpoints you will run
 GET
 http://localhost:8080/survivors
-
-GET INFECTED SURVIVORS
-http://localhost:8080/survivors/infectedSurvivors
-
-GET NONINFECTED
-http://localhost:8080/survivors/nonInfectedSurvivors
-
-GET PERCENTAGE OF INFECTED  
-http://localhost:8080/survivors/infectedSurvivorsPercentage
-
-GET PERCENTAGE OF NONINFECTED
-http://localhost:8080/survivors/nonInfectedSurvivorsPercentage
-
-GET BY ID
-http://localhost:8080/survivors/1       http://localhost:8080/survivors/{id}
-
-GET LIST OF ROBOTS
-Ensure that zscaler is turned off avoid this error (Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-zscaler)
-http://localhost:8080/api/robotData
+response status code 200
 
 POST SURVIVOR
 http://localhost:8080/survivors
@@ -65,17 +46,62 @@ http://localhost:8080/survivors
   }
 }
 
+response status code 201(created)
+
+GET BY ID
+http://localhost:8080/survivors/1       http://localhost:8080/survivors/{id}
+response status code 200
+
+PUT TO REPORT
+http://localhost:8080/survivors/1/reportContamination   /http://localhost:8080/survivors/{id}/reportContamination  (send the request three times to alter the status)
+response status code 204(NO_CONTENT)
+
+GET INFECTED SURVIVORS
+http://localhost:8080/survivors/infectedSurvivors
+response status code 200
+
+GET NONINFECTED
+http://localhost:8080/survivors/nonInfectedSurvivors
+response status code 200
+
+GET THE PERCENTAGE OF INFECTED  
+http://localhost:8080/survivors/infectedSurvivorsPercentage
+response status code 200
+
+GET THE PERCENTAGE OF NONINFECTED
+http://localhost:8080/survivors/nonInfectedSurvivorsPercentage
+response status code 200
+
+GET LIST OF ROBOTS
+Ensure that Zscaler is turned off to avoid this error (Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+Zscaler)
+
+http://localhost:8080/api/robotData
+response status code 200
+
+Robots have two categories (Flying robots and land robots). 
+
+Land robots
+http://localhost:8080/robotData/land
+response status code 200
+
+Flying robots
+http://localhost:8080/robotData/flying
+response status code 200
+
 PUT Location (Update survivor location)
 
-http://localhost:8080/survivors/2  / http://localhost:8080/survivors/{id}
+http://localhost:8080/survivors/1  / http://localhost:8080/survivors/{id}
 {
 "latitude": 33.7833,
 "longitude": -132.4167
 }
+response status code 204(NO_CONTENT)
 
-PUT TO REPORT
+package com.thembelanimkhize.robotapocalypse.Testcontrollers;
+I also have tests, using JUnit 5.
 
-http://localhost:8080/survivors/1/reportContamination   /http://localhost:8080/survivors/{id}/reportContamination
+
 
 
 
