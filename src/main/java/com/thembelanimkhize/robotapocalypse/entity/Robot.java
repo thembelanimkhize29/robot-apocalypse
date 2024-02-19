@@ -1,22 +1,22 @@
 package com.thembelanimkhize.robotapocalypse.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
-@Entity
 public class Robot {
-    @Id
-    @Column(unique = true)
+
     private String model;
     private String serialNumber;
     //private ZonedDateTime manufacturedDate;
     private String manufacturedDate;
     private Category category;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     public enum Category {
-        FLYING, LAND
+        Flying, Land
     }
 
     public Robot() {

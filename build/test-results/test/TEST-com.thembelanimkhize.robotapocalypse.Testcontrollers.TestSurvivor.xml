@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-01T08:17:12" hostname="431-L-MKHIZTHE" time="5.625">
+<testsuite name="com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-19T13:57:23" hostname="431-L-MKHIZTHE" time="3.064">
   <properties/>
-  <testcase name="shouldCreateANewSurvivor()" classname="com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor" time="5.625"/>
-  <system-out><![CDATA[10:16:50.290 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor]: TestSurvivor does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:16:50.783 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.thembelanimkhize.robotapocalypse.RobotApocalypseApplication for test class com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor
+  <testcase name="shouldReturnASurvivorWhenDataIsSaved()" classname="com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor" time="3.064"/>
+  <system-out><![CDATA[15:57:03.164 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor]: TestSurvivor does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:57:03.749 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.thembelanimkhize.robotapocalypse.RobotApocalypseApplication for test class com.thembelanimkhize.robotapocalypse.Testcontrollers.TestSurvivor
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,72 +13,31 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.2)
 
-2024-02-01T10:16:52.305+02:00  INFO 14876 --- [    Test worker] c.t.r.Testcontrollers.TestSurvivor       : Starting TestSurvivor using Java 17.0.9 with PID 14876 (started by Thembelani.Mkhize in C:\Users\Thembelani.Mkhize\Downloads\robot-apocalypse\robot-apocalypse)
-2024-02-01T10:16:52.311+02:00  INFO 14876 --- [    Test worker] c.t.r.Testcontrollers.TestSurvivor       : No active profile set, falling back to 1 default profile: "default"
-2024-02-01T10:16:55.042+02:00  INFO 14876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-01T10:16:55.055+02:00  INFO 14876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-02-01T10:16:55.206+02:00  INFO 14876 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.thembelanimkhize.robotapocalypse.repository.InventoryOfResourcesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-02-01T10:16:55.213+02:00  INFO 14876 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.thembelanimkhize.robotapocalypse.repository.SurvivorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-02-01T10:16:55.214+02:00  INFO 14876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 0 JDBC repository interfaces.
-2024-02-01T10:16:55.261+02:00  INFO 14876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-01T10:16:55.268+02:00  INFO 14876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-01T10:16:56.011+02:00  INFO 14876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 723 ms. Found 2 JPA repository interfaces.
-2024-02-01T10:16:59.145+02:00  INFO 14876 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-02-01T10:16:59.200+02:00  INFO 14876 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-01T10:16:59.201+02:00  INFO 14876 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-02-01T10:16:59.642+02:00  INFO 14876 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-01T10:16:59.647+02:00  INFO 14876 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7257 ms
-2024-02-01T10:17:00.378+02:00  INFO 14876 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-01T10:17:00.710+02:00  INFO 14876 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-02-01T10:17:00.929+02:00  INFO 14876 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-02-01T10:17:02.212+02:00  INFO 14876 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-01T10:17:02.336+02:00  INFO 14876 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-01T10:17:03.373+02:00  INFO 14876 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43294e9b
-2024-02-01T10:17:03.380+02:00  INFO 14876 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-01T10:17:03.534+02:00  WARN 14876 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-01T10:17:07.794+02:00  INFO 14876 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-01T10:17:08.180+02:00  INFO 14876 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-01T10:17:09.800+02:00  WARN 14876 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-01T10:17:12.311+02:00  INFO 14876 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 57687 (http) with context path ''
-2024-02-01T10:17:12.368+02:00  INFO 14876 --- [    Test worker] c.t.r.Testcontrollers.TestSurvivor       : Started TestSurvivor in 20.992 seconds (process running for 29.171)
-2024-02-01T10:17:16.435+02:00  INFO 14876 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-01T10:17:16.436+02:00  INFO 14876 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-01T10:17:16.440+02:00  INFO 14876 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-Hibernate: 
-    insert 
-    into
-        inventory_of_resources
-        (ammunition, food, medication, water) 
-    values
-        (?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        survivor
-        (age, gender, infected, inventory_id, latitude, longitude, name) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        survivor_contamination_reports
-        (survivor_id, contamination_reports) 
-    values
-        (?, ?)
-Hibernate: 
-    insert 
-    into
-        survivor_contamination_reports
-        (survivor_id, contamination_reports) 
-    values
-        (?, ?)
-Hibernate: 
-    insert 
-    into
-        survivor_contamination_reports
-        (survivor_id, contamination_reports) 
-    values
-        (?, ?)
+2024-02-19T15:57:06.097+02:00  INFO 16504 --- [    Test worker] c.t.r.Testcontrollers.TestSurvivor       : Starting TestSurvivor using Java 17.0.9 with PID 16504 (started by Thembelani.Mkhize in C:\Users\Thembelani.Mkhize\Downloads\check\robot-apocalypse)
+2024-02-19T15:57:06.104+02:00  INFO 16504 --- [    Test worker] c.t.r.Testcontrollers.TestSurvivor       : No active profile set, falling back to 1 default profile: "default"
+2024-02-19T15:57:08.845+02:00  INFO 16504 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-19T15:57:09.477+02:00  INFO 16504 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 606 ms. Found 2 JPA repository interfaces.
+2024-02-19T15:57:11.488+02:00  INFO 16504 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-02-19T15:57:11.532+02:00  INFO 16504 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-19T15:57:11.533+02:00  INFO 16504 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-19T15:57:11.872+02:00  INFO 16504 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-19T15:57:11.876+02:00  INFO 16504 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5682 ms
+2024-02-19T15:57:12.428+02:00  INFO 16504 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-19T15:57:12.681+02:00  INFO 16504 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-19T15:57:12.816+02:00  INFO 16504 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-19T15:57:13.691+02:00  INFO 16504 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-19T15:57:13.795+02:00  INFO 16504 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-19T15:57:14.823+02:00  INFO 16504 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f655dbd
+2024-02-19T15:57:14.829+02:00  INFO 16504 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-19T15:57:14.960+02:00  WARN 16504 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-19T15:57:18.657+02:00  INFO 16504 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-19T15:57:18.955+02:00  INFO 16504 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-19T15:57:22.445+02:00  WARN 16504 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-19T15:57:23.726+02:00  INFO 16504 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 61316 (http) with context path ''
+2024-02-19T15:57:23.749+02:00  INFO 16504 --- [    Test worker] c.t.r.Testcontrollers.TestSurvivor       : Started TestSurvivor in 18.876 seconds (process running for 27.07)
+2024-02-19T15:57:26.074+02:00  INFO 16504 --- [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-19T15:57:26.075+02:00  INFO 16504 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-19T15:57:26.079+02:00  INFO 16504 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
 Hibernate: 
     select
         s1_0.id,

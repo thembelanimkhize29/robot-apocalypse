@@ -32,7 +32,7 @@ public class TestSurvivor {
     }
     @Test
     void shouldReturnASurvivorWhenDataIsSaved() {
-        ResponseEntity<String> response = restTemplate.getForEntity("/survivors/2", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("/survivors/1", String.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
@@ -52,10 +52,10 @@ public class TestSurvivor {
     @Test
     @DirtiesContext
     void shouldUpdateAnExistingSurvivorLocation() {
-        Location updatedLocation = new Location(37.7749, -122.4194);
+        Location updatedLocation = new Location(34.7749, -124.4194);
         HttpEntity<Location> request = new HttpEntity<>(updatedLocation);
         ResponseEntity<Void> response = restTemplate
-                .exchange("/survivors/2", HttpMethod.PUT, request, Void.class);
+                .exchange("/survivors/1", HttpMethod.PUT, request, Void.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
     }
     @Test

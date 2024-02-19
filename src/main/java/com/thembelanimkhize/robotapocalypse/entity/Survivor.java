@@ -23,8 +23,10 @@ public class Survivor {
     private InventoryOfResources inventory;
 
     @ElementCollection
+    @CollectionTable(name = "survivor_contamination_reports")
     private List<Integer> contaminationReports = new ArrayList<>();
 
+    //The default constructor exists only for the sake of JPA.
     public Survivor() {
     }
 

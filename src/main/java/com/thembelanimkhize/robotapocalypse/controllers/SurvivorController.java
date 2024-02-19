@@ -21,11 +21,9 @@ import java.util.Optional;
 @RequestMapping("/survivors")
 public class SurvivorController {
     private final SurvivorRepository survivorRepository;
-    private final WebClient.Builder webClientBuilder;
 
-    public SurvivorController(SurvivorRepository survivorRepository, WebClient.Builder webClientBuilder) {
+    public SurvivorController(SurvivorRepository survivorRepository) {
         this.survivorRepository = survivorRepository;
-        this.webClientBuilder = webClientBuilder;
     }
 
     @GetMapping()
@@ -35,7 +33,8 @@ public class SurvivorController {
     @GetMapping("/{id}")
     private ResponseEntity<Survivor> findById(@PathVariable int id) {
         Optional<Survivor> survivor = survivorRepository.findById(id);
-        return survivor.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return survivor.map(ResponseEntity::ok).orElseGet(
+                () -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
@@ -71,7 +70,8 @@ public class SurvivorController {
         //System.out.println(savedSurvivor.id());
         URI locationOfNewSurvivor = ucb
                 .path("survivors/{id}")
-                //Note that savedCashCard.id is used as the identifier, which matches the GET endpoint's specification of cashcards/<CashCard.id>.
+                //Note that survivors.id is used as the identifier,
+                // which matches the GET endpoint's specification of survivors/<survivors.id>.
                 .buildAndExpand(savedSurvivor.getId())
                 .toUri();
         return ResponseEntity.created(locationOfNewSurvivor).build();
@@ -110,7 +110,8 @@ public class SurvivorController {
     @GetMapping("/infectedSurvivorsPercentage")
     public double getInfectedSurvivorsPercentage() {
         long totalSurvivors = survivorRepository.count();
-        long infectedSurvivors = survivorRepository.countInfectedSurvivors();
+        //long infectedSurvivors = survivorRepository.countInfectedSurvivors();
+        long infectedSurvivors = survivorRepository.countByInfectedTrue();
 
         if (totalSurvivors == 0) {
             return 0.0; // Handle division by zero
@@ -121,7 +122,8 @@ public class SurvivorController {
     @GetMapping("/nonInfectedSurvivorsPercentage")
     public double getNonInfectedSurvivorsPercentage() {
         long totalSurvivors = survivorRepository.count();
-        long nonInfectedSurvivors = survivorRepository.countNonInfectedSurvivors();
+        //long nonInfectedSurvivors = survivorRepository.countNonInfectedSurvivors();
+        long nonInfectedSurvivors = survivorRepository.countByInfectedFalse();
 
         if (totalSurvivors == 0) {
             return 0.0; // Handle division by zero
